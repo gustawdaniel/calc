@@ -5,7 +5,7 @@ This is exemplary project that presents simple php application that use html for
 ### Installation:
 
 ```
-git clone ...
+git clone https://github.com/gustawdaniel/calc
 mysql -u root
 source sql/00_main.sql
 exit
