@@ -14,6 +14,6 @@ ctr + N
 firefox localhost:9000
 ```
 
-In real project don’t place sql catalogue in locations avaliable for users.
+In real project don't place sql catalogue in locations avaliable for users.
 
 ![Alt text](/doc/screenshot.png?raw=true "Screenshot")
