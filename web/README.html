@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>README</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="php-calculator-with-logger-into-mysql-database">Php calculator with logger into MySql database</h1>
+
+<p>This is exemplary project that presents simple php application that use AJAX form and MySql connection.</p>
+
+<h3 id="installation">Installation:</h3>
+
+
+
+<pre class="prettyprint"><code class="language-bash hljs ">git clone https://github.com/gustawdaniel/calc.git
+perl install.pl
+CTRL+N
+firefox localhost:<span class="hljs-number">9000</span></code></pre>
+
+
+
+<h3 id="screen-shoot">Screen shoot</h3>
+
+<p><a href="https://postimg.org/image/5oe71swx7/"><img src="https://s17.postimg.org/z3jvat1gv/calc.png" alt="calc.png" title=""></a></p>
+
+<h3 id="features">Features</h3>
+
+
+
+<h4 id="centralized-configuration">Centralized configuration</h4>
+
+<p>Both php and perl use database parameters form <code>config/parameters.yml</code> file. MySql file with database structure is parsed in installation to use database name from this config file.</p>
+
+
+
+<h4 id="logging-requests-into-database">Logging requests into database</h4>
+
+<p>Main functionality is no calculating sum and difference of input fields, but saving requests to database. Any request is represented by <code>Log</code> object. Database object have one method - <code>save</code> that has <code>Log</code> as argument. Into database theres are logged:</p>
+
+<ul>
+<li>time - time of saving to database</li>
+<li>a - first input</li>
+<li>b - second input</li>
+<li>action - sum or diff</li>
+<li>user_agent - info about browser</li>
+</ul>
+
+
+
+<h4 id="testing-with-behat-and-selenium">Testing with behat and selenium</h4>
+
+<p>To test application setup selenium server <code>selenium-standalone start</code> and run <code>vendor/bin/behat</code>. Below there is presented result of testing.</p>
+
+<p><a href="https://postimg.org/image/xgjjo4moz/"><img src="https://s13.postimg.org/twxlybjzb/test.png" alt="test.png" title=""></a></p>
+
+<h3 id="external-libs">External libs</h3>
+
+<h4 id="composer">Composer</h4>
+
+<p>In backend there is installed <code>mustangostang/spyc</code> to parse yml config for php. We use composer to install it.</p>
+
+<h4 id="bower">Bower</h4>
+
+<p>In frontend we use <code>bootstrap 4</code> and <code>jQuery</code> to send <code>post</code>. These components are installed by bower.</p>
+
+<h4 id="npm">Npm</h4>
+
+<p>Testing server selenium is installed by Npm.</p></div></body>
+</html>

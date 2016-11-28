@@ -6,9 +6,13 @@
     var b = document.getElementById("b");
     var c = document.getElementById("c");
 
+    function round(value,dec=5) {
+        return 1*(Math.round(value+"e+"+dec)+"e-"+dec);
+    }
+
     submitArea.addEventListener('click',function (e) {
         if(e.target.name=='sum') {
-            c.value = (a.value*1) + (b.value*1);
+            c.value = round((a.value*1) + (b.value*1));
         } else if(e.target.name=='diff') {
             c.value = a.value - b.value;
         }
