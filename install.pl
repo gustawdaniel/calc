@@ -1,5 +1,8 @@
 #!/bin/perl
 
+system('sudo apt-get install autoconf build-essential -y');
+system('sudo cpan YAML:Tiny');
+
 use YAML::Tiny;
 
 use strict;
@@ -51,19 +54,28 @@ use warnings;
     close $fh;
 
 #       Execute file
+    system('sudo apt-get install mysql-server php-mysql -y');
+    system('sudo mysql -u root < '.$sql."fix.sql");
     system('mysql -u root < '.$build.$mainSQL);
 
 
 #-----------------------------------------    Frontend   -------------#
 
 #       Install php libs
+    system('sudo apt-get install composer -y');
+    system('sudo apt-get install php-mbstring -y');
+    system('sudo apt-get install php-curl -y');
+
     system('composer install');
 
 #       Install assets
+    system('sudo apt-get install npm -y');
+    system('sudo npm install bower -g');
+    system('sudo ln -s /usr/bin/nodejs /usr/bin/node');
     system('bower install');
 
 #       Install sellenium
-    system('sudo npm install selenium-standalo@latest -g');
+    system('sudo npm install selenium-standalone@latest -g');
     system('sudo selenium-standalone install');
 
 #       Start server

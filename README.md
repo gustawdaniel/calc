@@ -5,8 +5,9 @@ This is exemplary project that presents simple php application that use AJAX for
 ### Installation:
 
 ```bash
+sudo apt-get install git -y
 git clone https://github.com/gustawdaniel/calc.git
-perl install.pl
+cd calc && perl install.pl
 CTRL+N
 firefox localhost:9000
 ```
