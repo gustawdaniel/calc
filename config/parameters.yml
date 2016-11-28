@@ -1,0 +1,6 @@
+config:
+  	host: 'localhost'
+  	user: 'root'
+  	pass: ''
+  	base: 'calc'
+  	port: '3306'

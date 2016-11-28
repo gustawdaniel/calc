@@ -21,7 +21,7 @@ function save($res){
 	}
 
 	// Zapytanie do bazy danych.
-	$query  = 'INSERT INTO calc_1 VALUES(NULL,NOW(),?,?,?,?);';
+	$query  = 'INSERT INTO log VALUES(NULL,NOW(),?,?,?,?);';
 
 	// Przygotowywanie prepared statement
 	$stmt = @$mysqli -> prepare($query);

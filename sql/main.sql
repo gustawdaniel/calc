@@ -1,9 +1,9 @@
-DROP   DATABASE IF     EXISTS calc;
-CREATE DATABASE IF NOT EXISTS calc
+DROP   DATABASE IF     EXISTS database_name;
+CREATE DATABASE IF NOT EXISTS database_name
     DEFAULT CHARACTER SET = 'utf8'
     DEFAULT COLLATE 'utf8_unicode_ci';
 
-USE calc;
+USE database_name;
 
 CREATE TABLE log
 (
