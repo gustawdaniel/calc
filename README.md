@@ -34,6 +34,38 @@ To test application setup selenium server `selenium-standalone start` and run `v
 
 [![test.png](https://s13.postimg.org/twxlybjzb/test.png)](https://postimg.org/image/xgjjo4moz/)
 
+#### Access by API
+
+Using `httpie` we can obtain access by API. Result of action is saved as `c` and is calculated in php, when on website javascript is used to do calculation.
+
+    http -fv 127.0.0.1:9000/api.php/action a=1 b=2 action="sum"
+
+```
+POST /api.php/action HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 18
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+Host: 127.0.0.1:9000
+User-Agent: HTTPie/0.9.2
+
+a=1&b=2&action=sum
+
+HTTP/1.1 200 OK
+Connection: close
+Content-type: application/json
+Host: 127.0.0.1:9000
+X-Powered-By: PHP/7.0.8-0ubuntu0.16.04.3
+
+{
+    "a": "1", 
+    "action": "sum", 
+    "b": "2", 
+    "c": 3
+}
+```
+
 ### External libs
 #### Composer 
 In backend there is installed `mustangostang/spyc` to parse yml config for php. We use composer to install it.
@@ -41,3 +73,4 @@ In backend there is installed `mustangostang/spyc` to parse yml config for php. 
 In frontend we use `bootstrap 4` and `jQuery` to send `post`. These components are installed by bower.
 #### Npm
 Testing server selenium is installed by Npm.
+

@@ -11,6 +11,8 @@
 
 <p>This is exemplary project that presents simple php application that use AJAX form and MySql connection.</p>
 
+
+
 <h3 id="installation">Installation:</h3>
 
 
@@ -25,6 +27,8 @@ firefox localhost:<span class="hljs-number">9000</span></code></pre>
 <h3 id="screen-shoot">Screen shoot</h3>
 
 <p><a href="https://postimg.org/image/5oe71swx7/"><img src="https://s17.postimg.org/z3jvat1gv/calc.png" alt="calc.png" title=""></a></p>
+
+
 
 <h3 id="features">Features</h3>
 
@@ -56,15 +60,52 @@ firefox localhost:<span class="hljs-number">9000</span></code></pre>
 
 <p><a href="https://postimg.org/image/xgjjo4moz/"><img src="https://s13.postimg.org/twxlybjzb/test.png" alt="test.png" title=""></a></p>
 
+<h4 id="access-by-api">Access by API</h4>
+
+<p>Using <code>httpie</code> we can obtain access by API. Result of action is saved as <code>c</code> and is calculated in php, when on website javascript is used to do calculation.</p>
+
+<pre><code>http -fv 127.0.0.1:9000/api.php/action a=1 b=2 action="sum"
+</code></pre>
+
+<pre class="prettyprint"><code class=" hljs http"><span class="hljs-request">POST <span class="hljs-string">/api.php/action</span> HTTP/1.1</span>
+<span class="hljs-attribute">Accept</span>: <span class="hljs-string">*/*</span>
+<span class="hljs-attribute">Accept-Encoding</span>: <span class="hljs-string">gzip, deflate</span>
+<span class="hljs-attribute">Connection</span>: <span class="hljs-string">keep-alive</span>
+<span class="hljs-attribute">Content-Length</span>: <span class="hljs-string">18</span>
+<span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/x-www-form-urlencoded; charset=utf-8</span>
+<span class="hljs-attribute">Host</span>: <span class="hljs-string">127.0.0.1:9000</span>
+<span class="hljs-attribute">User-Agent</span>: <span class="hljs-string">HTTPie/0.9.2</span>
+
+<span class="lasso">a<span class="hljs-subst">=</span><span class="hljs-number">1</span><span class="hljs-subst">&amp;</span>b<span class="hljs-subst">=</span><span class="hljs-number">2</span><span class="hljs-subst">&amp;</span>action<span class="hljs-subst">=</span><span class="hljs-keyword">sum</span>
+
+HTTP/<span class="hljs-number">1.1</span> <span class="hljs-number">200</span> OK
+Connection: close
+Content<span class="hljs-attribute">-type</span>: application/json
+Host: <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">9000</span>
+X<span class="hljs-attribute">-Powered</span><span class="hljs-attribute">-By</span>: PHP/<span class="hljs-number">7.0</span><span class="hljs-number">.8</span><span class="hljs-subst">-</span><span class="hljs-number">0</span>ubuntu0<span class="hljs-number">.16</span><span class="hljs-number">.04</span><span class="hljs-number">.3</span>
+
+{
+    <span class="hljs-string">"a"</span>: <span class="hljs-string">"1"</span>, 
+    <span class="hljs-string">"action"</span>: <span class="hljs-string">"sum"</span>, 
+    <span class="hljs-string">"b"</span>: <span class="hljs-string">"2"</span>, 
+    <span class="hljs-string">"c"</span>: <span class="hljs-number">3</span>
+}</span></code></pre>
+
 <h3 id="external-libs">External libs</h3>
+
+
 
 <h4 id="composer">Composer</h4>
 
 <p>In backend there is installed <code>mustangostang/spyc</code> to parse yml config for php. We use composer to install it.</p>
 
+
+
 <h4 id="bower">Bower</h4>
 
 <p>In frontend we use <code>bootstrap 4</code> and <code>jQuery</code> to send <code>post</code>. These components are installed by bower.</p>
+
+
 
 <h4 id="npm">Npm</h4>
 
