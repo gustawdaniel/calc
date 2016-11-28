@@ -28,6 +28,7 @@ use warnings;
 #       remove database
     system('head -n 1 '.$build.$mainSQL.' | mysql -u root');
 
-#       remove build
+#       remove build and external packages
     system('rm -rf '.$build);
     system('rm -rf '.'web/bower_components');
+    system('rm -rf '.'vendor');

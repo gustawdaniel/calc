@@ -56,8 +56,15 @@ use warnings;
 
 #-----------------------------------------    Frontend   -------------#
 
+#       Install php libs
+    system('composer install');
+
 #       Install assets
     system('bower install');
 
+#       Install sellenium
+    system('sudo npm install selenium-standalo@latest -g');
+    system('sudo selenium-standalone install');
+
 #       Start server
-    system('cd web && php -S localhost:8000');
+    system('cd web && php -S localhost:9000');

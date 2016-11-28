@@ -1,0 +1,8 @@
+{
+    "require": {
+        "mustangostang/spyc": "^0.6.1"
+    },
+    "require-dev": {
+        "behat/behat": "^3.2"
+    }
+}
