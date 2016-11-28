@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Php calculator logging requests into database.</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="offset-md-3 col-md-6">
+            <div class="card text-xs-center">
+              <div class="card-header">
+                Set two numbers and chose calculation
+              </div>
+              <div class="card-block">
+                <div class="form-group">
+                  <input id="a" type="number" step="any" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input id="b" type="number" step="any" class="form-control">
+                </div>
+
+                <div class="form-group row submit-area">
+                  <div class="col-xs-6">
+                    <input class="btn btn-lg btn-block hidden-xs-down" type="submit" value='Sum' name="sum">
+                    <input class="btn btn-lg btn-block hidden-sm-up" type="submit" value='+' name="sum">
+                  </div>
+                  <div class="col-xs-6">
+                    <input class="btn btn-lg btn-block hidden-xs-down" type="submit" value='Difference' name="diff">
+                    <input class="btn btn-lg btn-block hidden-sm-up" type="submit" value='-' name="diff">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input id="c" type="text" readonly step="any" class="form-control">
+                </div>
+
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <nav class="navbar navbar-fixed-bottom navbar-light bg-faded">
+      <a class="navbar-brand float-xs-right" href="http://gustawdaniel.pl">Daniel Gustaw</a>
+    </nav>
+
+
+    <script src="js/site.js"></script>
+  </body>
+</html>
