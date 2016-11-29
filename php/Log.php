@@ -16,6 +16,20 @@ class Log
     /**
      * @return mixed
      */
+    public function getC()
+    {
+        if($this->action=="sum"){
+            return $this->a + $this->b;
+        } elseif ($this->action=="diff") {
+            return $this->a - $this->b;
+        } else {
+            return null;
+        }
+    }
+
+    /**
+     * @return mixed
+     */
     public function getAgent()
     {
         return $this->agent;
@@ -59,20 +73,6 @@ class Log
     public function setB($b)
     {
         $this->b = $b;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getC()
-    {
-        if($this->action=="sum"){
-            return $this->a + $this->b;
-        } elseif ($this->action=="diff") {
-            return $this->a - $this->b;
-        } else {
-            return null;
-        }
     }
 
     /**

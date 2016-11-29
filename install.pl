@@ -11,6 +11,10 @@ use warnings;
 
     my $yaml = YAML::Tiny->read( 'config/parameters.yml' );
     my $baseName  = $yaml->[0]->{config}->{base};
+    my $user  = $yaml->[0]->{config}->{user};
+    my $pass  = $yaml->[0]->{config}->{pass};
+    my $host  = $yaml->[0]->{config}->{host};
+    my $port  = $yaml->[0]->{config}->{port};
 
 #
 #       Catalogs structure:
@@ -50,8 +54,9 @@ use warnings;
     close $fh;
 
 #       Execute file
-    system('sudo mysql -u root < '.$sql."fix.sql");
-    system('mysql -u root < '.$build.$mainSQL);
+#    system('sudo mysql -u root < '.$sql."fix.sql");
+    my $passSting = ($pass eq "") ? "" : " -p ".$pass;
+    system('mysql -h '.$host.' -P '.$port.' -u '.$user.$passSting.' < '.$build.$mainSQL);
 
 #       Start server
     system('cd web && php -S localhost:9000');
