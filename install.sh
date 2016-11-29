@@ -18,6 +18,7 @@ sudo apt-get install mysql-server php-mysql -y
 sudo apt-get install composer -y
 sudo apt-get install php-mbstring -y
 sudo apt-get install php-curl -y
+sudo apt-get install php-xml -y
 composer install
 
 #-----------------------------------------    Frontend   -------------#
@@ -29,7 +30,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 bower install
 
 #       Install sellenium
-sudo apt-get install google-chrome-stable -y
+sudo apt-get install google-chrome-stable
 sudo apt-get install default-jre -y
 sudo npm install selenium-standalone@latest -g
 sudo selenium-standalone install
