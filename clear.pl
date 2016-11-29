@@ -30,5 +30,5 @@ use warnings;
 
 #       remove build and external packages
     system('rm -rf '.$build);
-    system('rm -rf '.'web/bower_components');
-    system('rm -rf '.'vendor');
+#    system('rm -rf '.'web/bower_components');
+#    system('rm -rf '.'vendor');
