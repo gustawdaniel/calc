@@ -54,9 +54,8 @@ use warnings;
     close $fh;
 
 #       Execute file
-#    system('sudo mysql -u root < '.$sql."fix.sql");
     my $passSting = ($pass eq "") ? "" : " -p ".$pass;
-    system('mysql -h '.$host.' -P '.$port.' -u '.$user.$passSting.' < '.$build.$mainSQL);
+    system('sudo mysql -h '.$host.' -P '.$port.' -u '.$user.$passSting.' < '.$build.$mainSQL);
 
 #       Start server
     system('cd web && php -S localhost:9000');
